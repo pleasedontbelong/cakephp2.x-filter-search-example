@@ -1,0 +1,26 @@
+.filters div.input.select, .filters div.input.text{
+	float:left;
+	width:150px;
+	clear:none;	
+}
+
+.filters div.input.select select{
+	width:140px;
+}
+
+.filters div.submit{
+	float:left;
+	clear:none;
+	display:block;
+}
+
+.filters a{
+	display: block;
+    font-size: 16px;
+    padding: 5px 13px;
+    width: 44px;
+}
+
+.highlight{
+	background-color: yellow;
+}
