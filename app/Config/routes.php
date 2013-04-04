@@ -23,6 +23,8 @@
  */
 
 	Router::connect('/', array('controller' => 'movies', 'action' => 'index'));
+	Router::connect('/habtm_filter', array('controller' => 'movies', 'action' => 'index_habtm'));
+
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

@@ -86,4 +86,28 @@ class Movie extends AppModel {
 			'order' => ''
 		)
 	);
+
+/**
+ * hasAndBelongsToMany associations
+ *
+ * @var array
+ */
+	public $hasAndBelongsToMany = array(
+		'Actor' => array(
+			'className' => 'Actor',
+			'joinTable' => 'actors_movies',
+			'foreignKey' => 'movie_id',
+			'associationForeignKey' => 'actor_id',
+			'unique' => 'keepExisting',
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		)
+	);
+
 }
