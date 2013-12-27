@@ -25,7 +25,7 @@ class MoviesController extends AppController {
 			// for each filter we will add a GET parameter for the generated url
 			foreach($this->data['Filter'] as $name => $value){
 				if($value){
-					// You migth want to sanitize the $value here
+					// You might want to sanitize the $value here
 					// or even do a urlencode to be sure
 					$filter_url[$name] = urlencode($value);
 				}
@@ -35,20 +35,20 @@ class MoviesController extends AppController {
 			return $this->redirect($filter_url);
 		} else {
 			// Inspect all the named parameters to apply the filters
-			foreach($this->params['named'] as $name => $value){
-				// Dont apply the default named parameters used for pagination
-				if(!in_array($name, array('page','sort','direction','limit'))){
-					// You migth user a switch here to make special filters
+			foreach($this->params['named'] as $param_name => $value){
+				// Don't apply the default named parameters used for pagination
+				if(!in_array($param_name, array('page','sort','direction','limit'))){
+					// You may use a switch here to make special filters
 					// like "between dates", "greater than", etc
-					if($name == "search"){
+					if($param_name == "search"){
 						$conditions['OR'] = array(
 							array('Movie.title LIKE' => '%' . $value . '%'),
     						array('Movie.description LIKE' => '%' . $value . '%')
 						);
 					} else {
-						$conditions['Movie.'.$name] = $value;
+						$conditions['Movie.'.$param_name] = $value;
 					}					
-					$this->request->data['Filter'][$name] = $value;	
+					$this->request->data['Filter'][$param_name] = $value;
 				}
 			}
 		}
