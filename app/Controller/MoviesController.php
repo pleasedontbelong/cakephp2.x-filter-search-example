@@ -46,7 +46,7 @@ class MoviesController extends AppController {
     						array('Movie.description LIKE' => '%' . $value . '%')
 						);
 					} else {
-						$conditions[$name] = $value;
+						$conditions['Movie.'.$name] = $value;
 					}					
 					$this->request->data['Filter'][$name] = $value;	
 				}
