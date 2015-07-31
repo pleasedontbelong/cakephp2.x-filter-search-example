@@ -11,3 +11,7 @@ Installing the demo
 Copyright Notes
 ---------------
 The description of the movies were taken from www.imdb.com
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/pleasedontbelong/cakephp2.x-filter-search-example/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
